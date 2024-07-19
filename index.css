@@ -1,0 +1,192 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(255, 255, 255, 0.1) 75%,
+      rgba(255, 255, 255, 0.1)
+    ),
+    linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(255, 255, 255, 0.1) 75%,
+      rgba(255, 255, 255, 0.1)
+    );
+  background-size: 80px 80px;
+  animation: background-animation 20s infinite linear;
+}
+@keyframes background-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 80px 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px; /* Decrease font size on smaller screens */
+  }
+}
+
+#main {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  background-color: #a29bfe;
+  display: flex;
+  flex-wrap: wrap;
+}
+.timestamp {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+#addBtn {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background-color: #2d3436;
+  color: white;
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+}
+
+.note {
+  width: 400px;
+  height: 400px;
+  max-width: 100%; /* Ensure notes don't exceed their container width */
+  min-width: 250px;
+  box-sizing: border-box;
+
+  margin: 15px;
+  margin-top: 55px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.tool {
+  width: 100%;
+  background-color: #2d3436;
+  color: white;
+  padding: 5px;
+  display: flex;
+  justify-content: end;
+}
+
+.tool i {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.note textarea {
+  border: none;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding: 10px;
+  font-size: 18px;
+  flex: 1;
+  resize: vertical;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.note textarea:focus {
+  border: 0;
+  outline: 0;
+}
+.important-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.important-checkbox:checked::after {
+  content: "\f06a"; /* FontAwesome star icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 16px;
+  color: #ffcc00; /* Yellow color for checked state */
+}
+.label-important {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #333;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.complete-checkbox,
+.important-checkbox {
+  margin-right: 5px;
+}
+.reminder-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 180px;
+  margin-left: 10px;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.reminder-input:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #5cace1; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(92, 172, 225, 0.5); /* Add subtle shadow on focus */
+}
+.inline-controls label {
+  font-size: 14px;
+  margin-left: 5px;
+}
+#search-container {
+  margin-bottom: 10px;
+}
+
+#search-input {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px; /* Adjust width as needed */
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+#search-input:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #5cace1; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(92, 172, 225, 0.5); /* Add subtle shadow on focus */
+}
+
+#search-input::placeholder {
+  color: #999; /* Placeholder text color */
+}
+
+#search-input:hover {
+  border-color: #999; /* Change border color on hover */
+}
+@media (max-width: 600px) {
+  .note {
+    flex-basis: 100%; /* Full width on smaller screens */
+  }
+}
